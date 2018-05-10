@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppComponent } from './app.component';
 import { ContactComponent, RegistrationService } from './registration'
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ContactComponent, RegistrationService } from './registration'
   imports: [
 	NgbModule.forRoot(),
     BrowserModule,
-	HttpClientModule
+	HttpClientModule,
+	FormsModule
   ],
   providers: [RegistrationService],
   bootstrap: [AppComponent]
