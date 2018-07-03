@@ -6,20 +6,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { ContactComponent, RegistrationService } from './registration'
+import { UserService } from './user/services/user.service';
+import { PostService } from './post/services/post.service';
+import { LoginService } from './login/services/login.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-	ContactComponent
+    AppComponent
   ],
   imports: [
-	NgbModule.forRoot(),
+    NgbModule.forRoot(),
     BrowserModule,
-	HttpClientModule,
-	FormsModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [RegistrationService],
+  providers: [UserService, PostService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
