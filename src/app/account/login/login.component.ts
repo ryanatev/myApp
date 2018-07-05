@@ -18,8 +18,9 @@ export class LoginComponent {
     onSubmit(emailAddress, password) {
         const x = 3;
         this.accountService.authenticate(emailAddress, password).subscribe((data: any) => {
-            sessionStorage.setItem('token', data.token);
-            this.router.navigate(['/home']);
+            sessionStorage.setItem('ihmbm_auth_token', data.token);
+            sessionStorage.setItem('ihmb_authenticated_user', JSON.stringify(data.user));
+            this.router.navigate(['']);
         }, (err: HttpErrorResponse) => {
             this.isLoginError = true;
         });

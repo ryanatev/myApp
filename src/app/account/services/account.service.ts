@@ -19,4 +19,17 @@ export class AccountService {
 		const url = 'http://localhost:1337/register';
 		return this.http.post(url, user);
 	}
+
+	isLoggedIn(): boolean {
+		return sessionStorage.getItem('ihmbm_auth_token') !== null;
+	}
+
+	getAuthenticatedUser() {
+		const user = sessionStorage.getItem('ihmb_authenticated_user');
+		if (user != null) {
+			return JSON.parse(user);
+		}
+
+		return null;
+	}
 }

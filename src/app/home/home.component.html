@@ -9,17 +9,15 @@
         </ul>
     </div>
 </nav>
-<div class="row" *ngIf="userClaims">
+<div class="row" *ngIf="user">
     <div class="col s12 m7">
         <div class="card">
             <div class="card-content">
-                <span>Username :{{userClaims.UserName}}</span>
+                <span>Username: {{user.emailAddress}}</span>
                 <br>
-                <span>Email : {{userClaims.Email}}</span>
+                <span>Full Name: {{user.firstName}} {{user.lastName}}</span>
                 <br>
-                <span>Full Name : {{userClaims.FirstName}} {{userClaims.LastName}}</span>
-                <br>
-                <span>Logged On : {{userClaims.LoggedOn}}</span>
+                <span>Logged On: {{user.loggedOn}}</span>
             </div>
         </div>
     </div>

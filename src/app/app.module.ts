@@ -10,12 +10,12 @@ import { SailsModule, SailsOptions, SailsEnvironment } from 'ngx-sails-socketio'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { UserService } from './user';
-import { PostService } from './post';
-
 import { AccountService, LoginComponent, RegisterComponent, AuthGuard, AuthInterceptor } from './account';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user';
+
+import { UserService } from './user';
+import { PostService } from './post';
 
 import { appRoutes } from './routes';
 

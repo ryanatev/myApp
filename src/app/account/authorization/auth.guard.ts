@@ -8,7 +8,7 @@ export class AuthGuard implements CanActivate {
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
 
-        if (sessionStorage.getItem('token') != null) {
+        if (sessionStorage.getItem('ihmbm_auth_token') != null) {
             return true;
         }
 

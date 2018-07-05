@@ -13,9 +13,9 @@ export class AuthInterceptor implements HttpInterceptor {
             return next.handle(req.clone());
         }
 
-        if (sessionStorage.getItem('token') != null) {
+        if (sessionStorage.getItem('ihmbm_auth_token') != null) {
             const clonedreq = req.clone({
-                headers: req.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
+                headers: req.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('ihmbm_auth_token'))
             });
             return next.handle(clonedreq)
                 .do(
