@@ -1,9 +1,0 @@
-<!--<div *ngFor="let state of states">
-	{{state.value}}
-</div>
-<h1>{{text}}</h1>
-<span (click)="changeText()">Change Text</span>-->
-
-<label for="typeahead-basic">Search for a state:</label>
-<input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="state" [ngbTypeahead]="lookupStates" [inputFormatter]="inputFormatter" [resultFormatter]="resultFormatter" />
-{{state.id}}
