@@ -4,10 +4,11 @@ import { PostService } from './post/services/post.service';
 import { LoginService } from './login/services/login.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
+<<<<<<< HEAD
 
 export class AppComponent implements OnInit {
   title = 'app';
@@ -61,4 +62,8 @@ export class AppComponent implements OnInit {
   //  this.heroesService.addHero(newHero)
   // .subscribe(hero => this.heroes.push(hero));
 
+=======
+export class AppComponent {
+	title = 'I Hate My Baby Mama';
+>>>>>>> 0fd811af8c36173a298c4595180b4c841fb31d96
 }
