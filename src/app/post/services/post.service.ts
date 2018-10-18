@@ -9,7 +9,7 @@ import { Post } from '../dto/post';
 export class PostService {
 	private socket: any;
 
-	constructor(private http: HttpClient, private sails: Sails) {}
+	constructor(private http: HttpClient, private sails: Sails) { }
 
 	save(post: Post) {
 		const url = 'http://localhost:1337/post';

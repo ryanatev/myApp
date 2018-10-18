@@ -1,18 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class AccountService {
-	constructor(private http: HttpClient) {}
+	public static EMAIL_PATTERN = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+	httpOptions: any;
+
+	constructor(private http: HttpClient) { 
+		this.httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json',
+				'No-Auth': 'True'
+			})
+		}
+	}
 
 	authenticate(emailAddress, password) {
+		const $ctrl = this;
 		const user = {
-            emailAddress: emailAddress,
-            password: password
-        };
+			emailAddress: emailAddress,
+			password: password
+		};
 
 		const url = 'http://localhost:1337/login';
-		return this.http.post(url, user);
+		return new Promise((resolve, reject) => {
+			this.http.post(url, user).subscribe((data: any) => {
+				resolve(data);
+			}, (err: HttpErrorResponse) => {
+				reject(err);
+			})
+		});
 	}
 
 	register(user) {

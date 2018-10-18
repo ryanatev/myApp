@@ -4,27 +4,23 @@ import { Router } from '@angular/router';
 import { AccountService } from '../account';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    user: any;
+	user: any;
 
-    constructor(private router: Router, private accountService: AccountService) { }
+	constructor(private router: Router, private accountService: AccountService) { }
 
-    ngOnInit() {
-        /* this.userService.getUserClaims().subscribe((data: any) => {
-            this.userClaims = data;
+	ngOnInit() {
+		this.user = this.accountService.getAuthenticatedUser();
+		this.user.loggedOn = this.accountService.isLoggedIn();
+	}
 
-        }); */
-
-        this.user = this.accountService.getAuthenticatedUser();
-        this.user.loggedOn = this.accountService.isLoggedIn();
-    }
-
-    Logout() {
-        sessionStorage.removeItem('userToken');
-        this.router.navigate(['/login']);
-    }
+	logout() {
+		sessionStorage.removeItem('ihmb_authenticated_user');
+		sessionStorage.removeItem('ihmbm_auth_token');
+		this.router.navigate(['/login']);
+	}
 }

@@ -3,5 +3,5 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class MoodService {
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient) { }
 }
